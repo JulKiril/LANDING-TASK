@@ -1,0 +1,263 @@
+.services {
+  margin-bottom: 250px;
+
+  &__wrapper {
+    max-width: 1206px;
+    margin: 0 auto;
+    padding-top: 92px;
+    padding-left: 13px;
+    padding-bottom: 100px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  &__card-title {
+    @include font($baseFont, 800, normal);
+    font-size: 38px;
+    line-height: 51px;
+    letter-spacing: 0;
+    color: #00A031;
+  }
+
+  &__card-text {
+    @include font($baseFont, normal, normal);
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    color: $textColor;
+    margin-bottom: 18px;
+  }
+
+  &__card-list {
+    margin-left: 28px;
+    margin-bottom: 46px;
+  }
+
+  &__card-item {
+    @include font($baseFont, normal, normal);
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    color: $textColor;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: 1px;
+      left: -28px;
+      content: url("../images/iconfinder.png");
+    }
+  }
+
+  &__card-btn {
+    padding: 15px 75px 16px 46px;
+    border: 2px solid $servicesColor;
+    background-color: #ffffff;
+    border-radius: 28px;
+    font-family: $addFont;
+    font-size: 18px;
+    line-height: 21px;
+    color: $servicesColor;
+    background: url("../images/Arrow.png") no-repeat 80% center;
+    transition: .2s all;
+
+    &:hover, &:focus {
+      background: url("../images/Arrow.png") no-repeat right center;
+    }
+  }
+
+  &__card-first {
+    margin-top: 87px;
+    margin-left: 84px;
+
+    .services__card-list {
+      margin-bottom: 48px;
+    }
+  }
+
+  &__card-second {
+    margin: 293px 46px 0 10px;
+
+    .services__card-text {
+      margin-bottom: 23px;
+    }
+
+  }
+
+  &__card-third {
+    margin-top: 288px;
+    flex-basis: 580px;
+    margin-left: 85px;
+
+    .services__card-title {
+      margin-bottom: 29px;
+    }
+
+    .services__card-text {
+      margin-left: 5px;
+      max-width: 550px;
+      margin-bottom: 20px;
+    }
+
+    .services__card-list {
+      margin-left: 35px;
+    }
+
+    .services__card-btn {
+      margin-left: 13px;
+    }
+  }
+
+  &__pic {
+    position: relative;
+    z-index: 1000;
+    flex-basis: 522px;
+    height: 522px;
+
+    img {
+      &:first-child {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+
+  &__pic-first > img {
+    &:nth-child(2) {
+      position: absolute;
+      top: 0;
+      left: 62px;
+    }
+  }
+
+  &__pic-second {
+    margin-top: 165px;
+
+    img {
+      &:nth-child(2) {
+        transform: rotate(18deg);
+        position: absolute;
+        top: -8px;
+        left: 40px;
+      }
+    }
+  }
+
+  &__pic-third {
+    margin-top: 200px;
+
+    img {
+      &:nth-child(2) {
+        position: absolute;
+        top: 5px;
+        left: 70px;
+      }
+    }
+  }
+
+  &__card-title {
+    margin-bottom: 28px;
+  }
+
+  &__path {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .curve-wrapp {
+    position: absolute;
+    top: 453px;
+    left: 275px;
+
+    .point {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 900;
+    }
+  }
+}
+
+//Media start
+
+@media screen and (max-width: 1230px) {
+  .services {
+    &__wrapper {
+      max-width: 1140px;
+      padding-left: 15px;
+      padding-right: 15px;
+      justify-content: space-between;
+    }
+
+    &__pic {
+      flex-basis: 500px;
+
+      img {
+        &:first-child {
+          width: 500px;
+          height: 500px;
+        }
+      }
+    }
+
+    &__card {
+      flex-basis: 450px;
+    }
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .services {
+    margin: 0;
+
+    &__wrapper {
+      justify-content: space-between;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    &__path, &__pic {
+      display: none;
+    }
+
+    &__card {
+      flex-basis: 33%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 0 0 20px 0;
+
+    }
+
+    &__card-btn {
+      width: 208px;
+    }
+  }
+}
+@media screen and (max-width: 1199px){
+  .services{
+    &__card-title{
+      font-size: 24px;
+    }
+  }
+}
+@media screen and (max-width: 733px){
+  .services{
+    &__card{
+      flex-basis: 50%;
+    }
+  }
+}
+@media screen and (max-width: 525px){
+  .services{
+    &__card{
+      flex-basis: 100%;
+    }
+  }
+}

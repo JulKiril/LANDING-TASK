@@ -1,0 +1,220 @@
+.team{
+  &__wrapper{
+    max-width: 1165px;
+    margin-left: 370px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+  }
+  &__card {
+    flex-basis: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 100px;
+  }
+  &__title{
+    @include font($baseFont, 800, normal);
+    font-size: 38px;
+    line-height: 51px;
+    letter-spacing: 0;
+    color: #00A031;
+    margin-top: 27px;
+  }
+  &__subtitle{
+    font-family: $addFont;
+    color: $textColor;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 10px 0 40px 5px;
+  }
+  &__text{
+    max-width: 550px;
+    margin-left: 5px;
+    @include font($baseFont, normal, normal);
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.3px;
+    color: $textColor;
+  }
+  &__socialList{
+    display: flex;
+    flex-direction: row;
+    margin: 52px 0 0 5px;
+  }
+  &__socialItem{
+    padding-left: 15px;
+    background: url("../images/Oval.png") no-repeat left center;
+    background-size: 5px;
+      a{
+        font-family: $addFont;
+        font-size: 16px;
+        line-height: 16px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: $textColor;
+      }
+    &:first-child{
+      padding-right: 14px;
+    }
+    &:nth-child(2){
+      padding-right: 20px;
+    }
+  }
+
+  .team-imgChange{
+    background: #FBFBFB;
+    height: 130px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 5px;
+        &__next,&__prev{
+          display: flex;
+          flex-direction: row;
+        }
+        &__nextText{
+          margin-top: 36px;
+          margin-left: 19px;
+        }
+        &__prevText{
+          margin-top: 36px;
+          margin-right: 19px;
+        }
+        &__nextLink, &__prevLink{
+            font-family: $addFont;
+            font-size: 16px;
+            line-height: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: $servicesColor;
+        }
+        &__nextName, &__prevName{
+            @include font($baseFont,600,normal);
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 0.2px;
+            color: $servicesColor;
+            margin-top: 10px;
+        }
+        &__nextLink{
+          padding-right: 38px;
+          background: url("../images/next.png") no-repeat right center;
+        }
+        &__prevLink{
+          text-align: right;
+          padding-left: 39px;
+          background: url("../images/prev.png") no-repeat left center;
+        }
+  }
+  .portrait{
+    height: 533px;
+    position: relative;
+      &__img-first{
+        position: absolute;
+        z-index: 500;
+        top: 1px;
+        right: 86px;
+      }
+      &__img-second{
+        position: absolute;
+        top: 24px;
+        right: 37px;
+        z-index: 400;
+      }
+    &__img-third{
+      position: absolute;
+      top: 57px;
+      right: 0;
+      z-index: 300;
+    }
+  }
+}
+//Media start
+@media screen and (max-width: 1800px) {
+  .team{
+    &__wrapper{
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .team {
+    .portrait {
+      &__img-first {
+        right: 0;
+      }
+
+      &__img-second, &__img-third {
+        display: none;
+      }
+    }
+  }
+}
+@media screen and (max-width: 830px){
+  .team{
+    &__title{
+      margin-top: 0;
+    }
+    &__portrait{
+      display: none;
+    }
+    &__card{
+      flex-direction: row;
+      margin-right: 0;
+      flex-basis: 100%;
+    }
+    &__data{
+      flex-basis: 50%;
+    }
+    .team-imgChange{
+      flex-basis: 50%;
+      padding-top: 350px;
+      background-image: url("../images/teamPhoto1.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      &__nextImg,&__nextName{
+        display: none;
+      }
+      &__nextText,&__prevText{
+        margin-top: -30px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px){
+  .team{
+    &__title{
+      font-size: 24px;
+    }
+    &__card{
+      flex-wrap: wrap;
+    }
+    &__data{
+      flex-basis: 100%;
+    }
+    &__text{
+      max-width: inherit;
+    }
+    &__socialList{
+      margin: 15px 0;
+
+    }
+    &__socialItem{
+      a{
+      letter-spacing: 0.1px;
+      }
+    }
+    .team-imgChange{
+      flex-basis: 100%;
+    }
+  }
+}

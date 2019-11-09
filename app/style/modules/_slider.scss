@@ -1,0 +1,87 @@
+.slider{
+  width: 100%;
+  min-height: 1062px;
+  background-image: url("../images/Bitmap.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding-top: 352px;
+    &__wrapper{
+      height: 100%;
+      margin: 0 auto;
+      max-width: 1008px;
+    }
+
+    &__title{
+    @include font($baseFont,600,normal);
+    font-size: 90px;
+    line-height: 100px;
+    color: $baseColor;
+    margin-bottom: 25px;
+      letter-spacing: 1.9px;
+
+  }
+  &__subtitle{
+    @include font($baseFont,600,normal);
+    line-height: 32px;
+    text-align: center;
+    color: $baseColor;
+    font-size: 18px;
+    letter-spacing: 0.2px;
+    margin-bottom: 56px;
+    text-align: center;
+  }
+  &__btn{
+    cursor: pointer;
+    display: block;
+    border: none;
+    margin: 0 auto;
+    padding: 16px 23px;
+    background: #00A031;
+    border-radius: 27px;
+    font-family: $addFont;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.1px;
+    color: #F4FBF6;
+
+  }
+}
+
+//Media start
+@media screen and (max-width: 1024px) {
+  .slider {
+    &__wrapper {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    &__title {
+      font-size: 50px;
+      text-align: center;
+    }
+  }
+}
+@media screen and (max-width: 414px){
+  .slider {
+    padding-top: 200px;
+    padding-bottom: 20px;
+    min-height: 100vh;
+  }
+}
+@media screen and (max-width: 400px) {
+  .slider {
+    &__title {
+      font-size: 24px;
+      line-height: 50px;
+    }
+  }
+}
+@media screen and (max-width: 320px){
+  .slider{
+    padding-top: 150px;
+  }
+}
+
+
+
